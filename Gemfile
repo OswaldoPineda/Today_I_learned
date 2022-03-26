@@ -46,8 +46,11 @@ gem "bootsnap", require: false
 gem 'haml'
 gem "haml-rails", "~> 2.0"
 
+# materialize for views
+gem 'materialize-sass', '~> 1.0.0'
+
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
