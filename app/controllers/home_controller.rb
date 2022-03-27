@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-	def index
+  def index
+    @test_title = 'testing'
   end
 end
