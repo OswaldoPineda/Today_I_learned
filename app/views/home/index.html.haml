@@ -1,5 +1,7 @@
-%h1 Hi
-%h2
+= link_to "New post", new_post_path
+
+%br/
+%br/
 
 - if user_signed_in?
   = button_to "Sign out", destroy_user_session_path, :method => :delete
