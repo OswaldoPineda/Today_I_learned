@@ -5,7 +5,7 @@
   = @post.title
 %p
   %b Content:
-  = @post.content
+  = markdown(@post.content)
 
 = link_to 'Edit', edit_post_path(@post)
 \|
