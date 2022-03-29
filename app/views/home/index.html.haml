@@ -1,9 +1,20 @@
 = link_to "New post", new_post_path
 
+- if user_signed_in?
+  = button_to "Sign out", destroy_user_session_path, :method => :delete
+  = link_to "My post", posts_path
+- else
+  = link_to "Sign In" , new_user_session_path
+
+%hr/
+
 %br/
 %br/
 
-- if user_signed_in?
-  = button_to "Sign out", destroy_user_session_path, :method => :delete
-- else
-  = link_to "Sign In" , new_user_session_path
+- @posts.each do |post|
+  %tr
+    %td= post.title
+    %td= markdown(post.content)
+  %hr/
+  %hr/
+
