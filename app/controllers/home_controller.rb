@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @test_title = 'testing'
+    @posts = Post.all
   end
 end
