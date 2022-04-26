@@ -1,0 +1,34 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/factories/**/*'
+    - 'tmp/**/*'
+  TargetRubyVersion: 2.2
+
+Style/Encoding:
+  EnforcedStyle: when_needed
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Metrics/LineLength:
+  Max: 200
+
+Metrics/ClassLength:
+  Enabled: false
+
+IndentationConsistency:
+  EnforcedStyle: rails
+
+Documentation:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+Metrics:
+  Enabled: false

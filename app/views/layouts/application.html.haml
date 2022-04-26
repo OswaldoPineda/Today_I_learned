@@ -9,6 +9,23 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
+    %nav
+      .nav-wrapper.container
+        %a.brand-logo{href: "#"} Logo
+      %ul#nav-mobile.right.hide-on-med-and-down
+        %li
+          %a{href: "sass.html"} Sass
+        %li
+          %a{href: "badges.html"} Components
+        %li
+          - if user_signed_in?
+            = button_to "Sign out", destroy_user_session_path, :method => :delete
+            = link_to "My post", posts_path
+          - else
+            = link_to "Sign In" , new_user_session_path
+
     %p.notice= notice
     %p.alert= alert
-    = yield
+
+    .container
+      = yield

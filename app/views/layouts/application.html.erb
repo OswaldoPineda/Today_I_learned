@@ -11,6 +11,31 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">TIL</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li>
+            <% if user_signed_in? %>
+              <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <% else %>
+              <%= link_to "Sign In" , new_user_session_path %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p class="notice">
+    <%= notice %>
+    </p>
+    <p class="alert">
+    <%= alert %>
+    </p>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
