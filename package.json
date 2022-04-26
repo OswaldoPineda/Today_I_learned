@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "prepare": "husky install",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.0"
+  },
+  "lint-staged": {
+     "*.js": "eslint",
+     "*.css": "stylelint",
+     "*.rb": "rubocop -a -c .rubocop-linter.yml --fail-level E && rubycritic",
+     "*.haml": "haml-lint -c .haml-lint.yml"
+  },
+  "pre-commit": "lint-staged"
+}

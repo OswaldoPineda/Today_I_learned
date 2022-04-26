@@ -31,3 +31,5 @@
 /config/master.key
 
 .vscode
+
+node_modules/
