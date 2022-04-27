@@ -7,9 +7,5 @@
 %br/
 
 - @posts.each do |post|
-  %tr
-    %td= post.title
-    %td= markdown(post.content)
-  %hr/
-  %hr/
+  = render partial: 'posts/post', locals: { post: post }
 
