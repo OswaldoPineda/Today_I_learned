@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
 
   <body>
@@ -27,12 +29,7 @@
         </ul>
       </div>
     </nav>
-    <p class="notice">
-    <%= notice %>
-    </p>
-    <p class="alert">
-    <%= alert %>
-    </p>
+    <%= render partial: 'shared/notifications' %>
 
     <div class="container">
       <%= yield %>
