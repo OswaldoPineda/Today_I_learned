@@ -13,10 +13,13 @@
  *= require_tree .
  *= require_self
  */
- @import "materialize/components/color-variables";
- @import "materialize";
+@import "materialize/components/color-variables";
+@import "materialize";
 
- @import "posts/post";
+// general
+@import "general/colors";
 
- // shared
- @import "shared/notification";
+@import "posts/post";
+
+// shared
+@import "shared/notification";
