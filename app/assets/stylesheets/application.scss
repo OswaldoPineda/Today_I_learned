@@ -16,4 +16,7 @@
  @import "materialize/components/color-variables";
  @import "materialize";
 
- @import "posts/post"
+ @import "posts/post";
+
+ // shared
+ @import "shared/notification";

@@ -1,0 +1,15 @@
+- if notice
+  .container
+    .alert.card.green.lighten-4.green-text.text-darken-4
+      .card-content
+        %p
+          %i.material-icons check_circle
+          = notice
+
+- if alert
+  .container
+    .alert.card.red.lighten-4.red-text.text-darken-4
+      .card-content
+        %p
+          %i.material-icons report
+          = alert
