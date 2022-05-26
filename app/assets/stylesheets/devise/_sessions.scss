@@ -1,0 +1,22 @@
+.login-page {
+  width: 100%;
+  max-width: 500px;
+
+  .field {
+    .checkbox-input.input-field {
+      display: flex;
+      align-items: center;
+
+      label {
+        cursor: pointer;
+        margin-left: 10px;
+        position: relative;
+        transform: translateY(0);
+      }
+    }
+
+    input[type='checkbox'] {
+      opacity: 1;
+    }
+  }
+}
