@@ -1,0 +1,30 @@
+.sign-out {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  line-height: 64px;
+  padding: 0 15px;
+  transition: background-color .3s;
+}
+
+nav.nav {
+  margin-bottom: 30px;
+
+  .sign-out-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .brand-logo {
+    text-align: center;
+    width: 100%;
+
+    @media only screen and(min-width: 400px) {
+      width: auto;
+    }
+  }
+}
