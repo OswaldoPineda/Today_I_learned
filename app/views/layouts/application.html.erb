@@ -6,33 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_importmap_tags %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo">TIL</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li>
-            <% if user_signed_in? %>
-              <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
-            <% else %>
-              <%= link_to "Sign In" , new_user_session_path %>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <%= render partial: 'shared/navbar' %>
     <%= render partial: 'shared/notifications' %>
 
     <div class="container">
       <%= yield %>
     </div>
+    <script src=' https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
   </body>
 </html>
