@@ -1,4 +1,4 @@
-.login-page {
+.session-form {
   width: 100%;
   max-width: 500px;
 
@@ -18,5 +18,12 @@
     input[type='checkbox'] {
       opacity: 1;
     }
+  }
+
+  input[type='submit'] {
+    color: white;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
   }
 }
