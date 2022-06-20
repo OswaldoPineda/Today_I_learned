@@ -4,7 +4,6 @@
   %thead
     %tr
       %th Title
-      %th Content
       %th
       %th
       %th
@@ -13,11 +12,12 @@
     - @posts.each do |post|
       %tr
         %td= post.title
-        %td= markdown(post.content)
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+        %td
+          = link_to post do
+            %i.material-icons remove_red_eye
+        %td
+          = link_to edit_post_path(post) do
+            %i.material-icons.orange-text create
+        %td
+          = button_to post, method: :delete, class: 'delete-post', data: { confirm: 'Are you sure?' } do
+            %i.material-icons.red-text delete
