@@ -6,3 +6,27 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+labels = [
+  'Html',
+  'CSS',
+  'Javascript',
+  'NodeJs',
+  'Ruby',
+  'Ruby On Rails',
+  'React',
+  'Vue',
+  'Angular',
+  'NextJs',
+  'Webpack',
+  'Heroku',
+  'Postgres',
+  'Express',
+  'Typescript',
+  'Helpers',
+  'Sass',
+  'Shell'
+]
+
+labels.each do |label|
+  Label.find_or_create_by(name: label)
+end
