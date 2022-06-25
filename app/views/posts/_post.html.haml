@@ -6,6 +6,12 @@
           = post.title
         = markdown(post.content)
       .card-action
-        %a.new.badge.red{ href: "#" }Ruby
-        %a.new.badge.red{ href: "#" }Ruby on Rails
-        %a.new.badge.red{ href: "#" }Javascript
+        .user-info.valign-wrapper
+          %i.material-icons account_circle
+          %span= post.user.email
+        - unless post.labels.empty?
+          .divider.divider-margin
+          .labels
+            %a.new.badge.red{ href: "#" }Ruby
+            %a.new.badge.red{ href: "#" }Ruby on Rails
+            %a.new.badge.red{ href: "#" }Javascript
