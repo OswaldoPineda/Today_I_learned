@@ -13,5 +13,8 @@
     "*.rb": "rubocop -a -c .rubocop-linter.yml --fail-level E && rubycritic",
     "*.haml": "haml-lint -c .haml-lint.yml"
   },
-  "pre-commit": "lint-staged"
+  "pre-commit": "lint-staged",
+  "dependencies": {
+    "marked": "^4.0.18"
+  }
 }
