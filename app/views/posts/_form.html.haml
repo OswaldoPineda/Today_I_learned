@@ -1,16 +1,15 @@
 = form_for @post do |f|
-  .row.post-form
+  .row.post-form{ data: { controller: "post" } }
     .col.s12.m6
       .row
         %h4 Title
         .input-field
-          = f.text_field :title, class: 'post-title'
+          = f.text_field :title, class: 'post-title', data: { action: 'input->post#preview' }
       .row
         %h5 Content
         .input-field
-          = f.text_area :content, id: 'text-area', class: 'materialize-textarea', 'data-length': '10'
+          = f.text_area :content, id: 'text-area', class: 'materialize-textarea', 'data-length': '10', data: { action: 'input->post#preview' }
       .actions.row
         = f.submit 'Save', class: "btn waves-effect waves-light w-100"
     .col.s12.m6
-      %h4 Preview
-      .post-preview.light-gray-background
+      = render 'preview', post: @post
