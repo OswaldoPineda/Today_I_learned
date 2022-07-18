@@ -1,6 +1,6 @@
-import { application } from "./application"
+import { application } from "controllers/application"
 
-import PostController from "./post_controller.js"
+import PostController from "controllers/post_controller"
 application.register("post", PostController)
 
 import initMaterialize from "controllers/materialize"
