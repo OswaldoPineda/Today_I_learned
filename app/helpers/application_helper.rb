@@ -2,6 +2,8 @@
 
 module ApplicationHelper
   def markdown(text)
+    return '' if text.blank?
+
     options = {
       hard_wrap: true,
       autolink: true,
