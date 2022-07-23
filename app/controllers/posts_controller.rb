@@ -15,15 +15,20 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @labels = Label.all
   end
 
   # GET /posts/1/edit
-  def edit; end
+  def edit
+    @labels = Label.all
+  end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(title: post_params[:title], content: post_params[:content])
     @post.user_id = current_user.id
+    labels = Label.where(id: params[:label_ids])
+    @post.labels << labels
 
     respond_to do |format|
       if @post.save
@@ -38,6 +43,9 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    labels = Label.where(id: params[:label_ids])
+    @post.labels = labels
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
@@ -68,6 +76,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :label_ids)
   end
 end

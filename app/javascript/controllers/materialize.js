@@ -10,10 +10,16 @@ function initMaterialize() {
     var instances = M.FloatingActionButton.init(floatingButton, {});
   }
 
+  function initSelectInput() {
+    var selects = document.querySelectorAll('select');
+    M.FormSelect.init(selects, {});
+  }
+
 
   document.addEventListener('DOMContentLoaded', function() {
     initDropdown();
     initFloatingActionButton();
+    initSelectInput();
   });
 };
 
