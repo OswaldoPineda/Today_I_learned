@@ -26,9 +26,8 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(title: post_params[:title], content: post_params[:content])
-    @post.user_id = current_user.id
-    labels = Label.where(id: params[:label_ids])
-    @post.labels << labels
+    @post.add_user(current_user.id)
+    @post.add_labels(params[:label_ids])
 
     respond_to do |format|
       if @post.save
@@ -43,8 +42,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    labels = Label.where(id: params[:label_ids])
-    @post.labels = labels
+    @post.update_labels(params[:label_ids])
 
     respond_to do |format|
       if @post.update(post_params)

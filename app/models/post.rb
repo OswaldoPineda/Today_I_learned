@@ -6,4 +6,18 @@ class Post < ApplicationRecord
                       length: { minimum: 5 }
   belongs_to :user
   has_and_belongs_to_many :labels
+
+  def add_labels(label_ids)
+    labels = Label.where(id: label_ids)
+    self.labels << labels
+  end
+
+  def add_user(user)
+    self.user_id = user
+  end
+
+  def update_labels(label_ids)
+    labels = Label.where(id: label_ids)
+    self.labels = labels
+  end
 end
