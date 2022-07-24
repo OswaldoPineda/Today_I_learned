@@ -75,8 +75,9 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
