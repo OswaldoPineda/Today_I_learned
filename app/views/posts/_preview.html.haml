@@ -1,4 +1,4 @@
 %h4 Preview
 .post-preview.light-gray-background
   %h2#preview-title{ 'data-post-target': 'titlePreview' }= post.title
-  %div#preview-body{ 'data-post-target': 'bodyPreview' }= markdown(post.content)
+  #preview-body{ 'data-post-target': 'bodyPreview' }= markdown(post.content)

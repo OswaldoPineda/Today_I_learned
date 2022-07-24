@@ -1,9 +1,12 @@
-%ul#dropdown1.dropdown-content
+%ul.dropdown-content#dropdown1
   %li
     = link_to 'Profile', edit_user_registration_path
   %li.divider
   %li.sign-out-button
-    = button_to "Sign out", destroy_user_session_path, :method => :delete, class: 'waves-effect waves-light btn valign-wrapper'
+    = button_to "Sign out",
+      destroy_user_session_path,
+      method: :delete,
+      class: 'waves-effect waves-light btn valign-wrapper'
 
 .fixed-action-btn.hide-on-large-only
   %a.btn-floating.btn-large.red
@@ -17,7 +20,9 @@
         %a.btn-floating.yellow{ href: edit_user_registration_path }
           %i.material-icons person
       %li
-        = button_to destroy_user_session_path, :method => :delete, class: 'btn-floating red darken-1' do
+        = button_to destroy_user_session_path,
+          method: :delete,
+          class: 'btn-floating red darken-1' do
           %i.material-icons exit_to_app
 
 %nav.nav
@@ -33,4 +38,4 @@
               Profile
               %i.material-icons.right arrow_drop_down
         - else
-          %li= link_to "Sign In" , new_user_session_path
+          %li= link_to "Sign In", new_user_session_path

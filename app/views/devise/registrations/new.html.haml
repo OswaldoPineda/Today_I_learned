@@ -6,17 +6,28 @@
       .field
         .input-field.col.s12
           %i.material-icons.prefix mail_outline
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true, id: 'test'
+          = f.email_field :email,
+            autofocus: true,
+            autocomplete: "email",
+            placeholder: "Email",
+            required: true,
+            id: 'test'
 
       .field
         .input-field.col.s12
           %i.material-icons.prefix lock_outline
-          = f.password_field :password, autocomplete: "new-password", placeholder: "Password", required: true
+          = f.password_field :password,
+            autocomplete: "new-password",
+            placeholder: "Password",
+            required: true
 
       .field
         .input-field.col.s12
           %i.material-icons.prefix lock_outline
-          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", required: true
+          = f.password_field :password_confirmation,
+            autocomplete: "new-password",
+            placeholder: "Confirm Password",
+            required: true
 
       .actions
         = f.submit "Sign up", class: "btn waves-effect waves-light col s12"

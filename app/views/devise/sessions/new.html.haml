@@ -5,12 +5,19 @@
       .field
         .input-field.col.s12
           %i.material-icons.prefix mail_outline
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", required: true
+          = f.email_field :email,
+            autofocus: true,
+            autocomplete: "email",
+            placeholder: "Email",
+            required: true
 
       .field
         .input-field.col.s12
           %i.material-icons.prefix lock_outline
-          = f.password_field :password, autocomplete: "current-password", placeholder: "Password", required: true
+          = f.password_field :password,
+            autocomplete: "current-password",
+            placeholder: "Password",
+            required: true
 
       - if devise_mapping.rememberable?
         .field
