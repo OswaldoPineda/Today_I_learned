@@ -1,20 +1,25 @@
 {
   "scripts": {
-    "prepare": "husky install",
-    "precommit": "lint-staged"
+    "start": "rails server",
+    "rubocop": "bundle exec rubocop",
+    "haml-lint": "bundle exec haml-lint --exclude=vendor/**/*.haml",
+    "scss-lint": "bundle exec scss-lint --exclude=node_modules/**/*.scss",
+    "eslint": "eslint app/javascript",
+    "linters": "CMD='run-p -l' yarn linters:base",
+    "linters:base": "$CMD rubocop haml-lint scss-lint eslint"
   },
   "devDependencies": {
     "husky": "^7.0.4",
-    "lint-staged": "^12.4.0"
+    "lint-staged": "^12.4.0",
+     "eslint": "^7.4.0"
   },
   "lint-staged": {
     "*.js": "eslint",
-    "*.css": "stylelint",
-    "*.rb": "rubocop -a -c .rubocop-linter.yml --fail-level E && rubycritic",
-    "*.haml": "haml-lint -c .haml-lint.yml"
+    "*.rb": "rubocop",
+    "*.haml": "haml-lint"
   },
-  "pre-commit": "lint-staged",
   "dependencies": {
     "marked": "^4.0.18"
-  }
+  },
+  "pre-commit": "linters"
 }

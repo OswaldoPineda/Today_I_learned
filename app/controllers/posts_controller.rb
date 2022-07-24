@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Service to download ftp files from the server
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!

@@ -1,0 +1,131 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "bin/*"
+    - "cache/**/*"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+    - "spec/fixtures/**/*"
+    - "spec/support/fixture_builder.rb"
+    - "tmp/**/*"
+    - "db/data/*"
+    - "db/data_schema.rb"
+    - "db/migrate/*"
+    - "db/schema.rb"
+    - "config/initializers/*"
+
+  TargetRubyVersion: 2.6
+
+Layout/LineLength:
+  Exclude:
+    - "db/seeds.rb"
+  Max: 100
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  IndentationWidth: 4
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: special_inside_parentheses
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  IndentationWidth: 4
+
+Style/BlockComments:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - indented
+    - indented_relative_to_receiver
+  # By default, the indentation width from Style/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: 4
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - "Rakefile"
+    - "**/*.rake"
+    - "spec/**/*.rb"
+    - "config/environments/*.rb"
+    - "config/routes.rb"
+
+Metrics/ModuleLength:
+  Exclude:
+    - "spec/**/*.rb"
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: false
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: false
+Style/AccessorGrouping:
+  Enabled: true
+Style/BisectedAttrAccessor:
+  Enabled: true
+Style/RedundantAssignment:
+  Enabled: true
+Performance/AncestorsInclude:
+  Enabled: true
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+Performance/RedundantSortBlock:
+  Enabled: true
+Performance/RedundantStringChars:
+  Enabled: true
+Performance/ReverseFirst:
+  Enabled: true
+Performance/SortReverse:
+  Enabled: true
+Performance/Squeeze:
+  Enabled: true
+Performance/StringInclude:
+  Enabled: true

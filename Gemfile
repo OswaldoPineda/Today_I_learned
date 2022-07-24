@@ -66,7 +66,9 @@ gem 'redcarpet'
 # linters
 gem 'haml_lint', require: false
 gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
 gem 'rubycritic', require: false
+gem 'rubocop-performance'
 
 group :test do
   gem 'rspec-rails'
