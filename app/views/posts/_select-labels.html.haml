@@ -1,0 +1,7 @@
+%select{ multiple: 'multiple', name: 'label_ids[]' }
+  %option{ value: "", disabled: 'disabled', selected: 'selected' } Choose your labels
+  - labels.each do |label|
+    - if post.labels.include?(label)
+      %option{ value: label.id, selected: true }= label.name
+    - else
+      %option{ value: label.id }= label.name
