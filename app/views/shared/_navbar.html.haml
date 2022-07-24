@@ -6,7 +6,7 @@
     = button_to "Sign out",
       destroy_user_session_path,
       method: :delete,
-      class: 'waves-effect waves-light btn valign-wrapper'
+      class: 'waves-effect waves-light btn valign-wrapper main-btn'
 
 .fixed-action-btn.hide-on-large-only
   %a.btn-floating.btn-large.red
@@ -25,11 +25,11 @@
           class: 'btn-floating red darken-1' do
           %i.material-icons exit_to_app
 
-%nav.nav
+%nav.nav.main-bg
   .nav-wrapper.container
     = link_to "Today I Learned", root_path, class: 'brand-logo'
     %ul.right.hide-on-med-and-down
-      %li= link_to "New Post", new_post_path, class: 'waves-effect waves-light btn'
+      %li= link_to "New Post", new_post_path, class: 'main-btn waves-effect waves-light btn'
       %li= link_to "My learned", posts_path
       %li
         - if user_signed_in?

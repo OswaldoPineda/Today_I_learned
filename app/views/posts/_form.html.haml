@@ -5,19 +5,18 @@
         %h4 Title
         .input-field
           = f.text_field :title,
-            class: 'post-title',
+            class: 'post-title white-input',
             data: { post_target: 'title', action: 'input->post#preview' }
       .row
         %h5 Content
         .input-field
           = f.text_area :content,
             id: 'text-area',
-            class: 'materialize-textarea',
+            class: 'materialize-textarea white-input',
             'data-length': '10',
             data: { post_target: 'body', action: 'input->post#preview' }
-        .input-field
-          = render 'select-labels', { labels: labels, post: post }
+        = render 'select-labels', { labels: labels, post: post }
       .actions.row
-        = f.submit 'Save', class: "btn waves-effect waves-light w-100"
+        = f.submit 'Save', class: "main-btn btn waves-effect waves-light w-100"
     .col.s12.m6
       = render 'preview', post: post

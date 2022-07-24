@@ -1,3 +1,63 @@
 .w-100 {
   width: 100%;
 }
+
+.main-btn {
+  background: $secondary-color;
+
+  &:hover {
+    background: #f2744a;
+  }
+}
+
+.main-bg {
+  background: $main-color;
+}
+
+.main-text-color {
+  color: $main-text-color;
+}
+
+i.material-icons.prefix.active {
+ color: #000000de;
+}
+
+a.blue-text.link {
+  color: $link-color !important;
+}
+
+.border-light {
+  border-radius: 8px;
+}
+
+.row.post-form {
+  padding: 20px;
+}
+
+input.white-input[type='text'],
+input.white-input[type='password'],
+textarea.white-input {
+  background: white;
+  border-radius: 3px 3px 0 0;
+}
+
+.select-wrapper input.select-dropdown {
+  background: white;
+  border-radius: 3px 3px 0 0;
+}
+
+pre {
+  background: #2b2b2b;
+  border-radius: 8px;
+  color: #f8f8f2;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+a.badge.badge-main {
+  background: $secondary-color;
+  border-radius: 8px;
+  color: $white !important;
+  padding: 5px;
+}
