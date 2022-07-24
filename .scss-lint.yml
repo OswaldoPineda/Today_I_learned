@@ -1,0 +1,13 @@
+exclude:
+  - 'vendor/**'
+  - 'node_modules/**'
+
+linters:
+  SelectorFormat:
+    convention: 'hyphenated_BEM'
+  PlaceholderInExtend:
+    enabled: false
+  HexLength:
+    enabled: false
+  PropertySpelling:
+    extra_properties: [ 'gap' ]
