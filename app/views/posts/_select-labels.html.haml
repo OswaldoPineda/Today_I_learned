@@ -1,6 +1,6 @@
 %h5 Labels
 .input-field
-  %select.white-input{ multiple: 'multiple', name: 'label_ids[]' }
+  %select.white-input{ multiple: 'multiple', name: 'post[label_ids][]' }
     - labels.each do |label|
       - if post.labels.include?(label)
         %option{ value: label.id, selected: true }= label.name

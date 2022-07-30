@@ -25,10 +25,11 @@ class PostsController < ApplicationController
   end
 
   # POST /posts or /posts.json
+  # rubocop:disable all
   def create
-    @post = Post.new(title: post_params[:title], content: post_params[:content])
+    @post = Post.new(title: params[:post][:title], content: params[:post][:content])
     @post.add_user(current_user.id)
-    @post.add_labels(params[:label_ids])
+    @post.add_labels(params[:post][:label_ids])
 
     respond_to do |format|
       if @post.save
@@ -40,13 +41,14 @@ class PostsController < ApplicationController
       end
     end
   end
+  # rubocop:enable all
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    @post.update_labels(params[:label_ids])
+    @post.update_labels(params[:post][:label_ids])
 
     respond_to do |format|
-      if @post.update(post_params)
+      if @post.update(title: params[:post][:title], content: params[:post][:content])
         format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
