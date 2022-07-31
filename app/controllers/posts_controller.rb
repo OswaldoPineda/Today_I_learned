@@ -25,36 +25,28 @@ class PostsController < ApplicationController
   end
 
   # POST /posts or /posts.json
-  # rubocop:disable all
   def create
     @post = Post.new(title: params[:post][:title], content: params[:post][:content])
     @post.add_user(current_user.id)
     @post.add_labels(params[:post][:label_ids])
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to post_url(@post), notice: 'Post was successfully created.'
+    else
+      @labels = Label.all
+      render :new
     end
   end
-  # rubocop:enable all
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     @post.update_labels(params[:post][:label_ids])
 
-    respond_to do |format|
-      if @post.update(title: params[:post][:title], content: params[:post][:content])
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(title: params[:post][:title], content: params[:post][:content])
+      redirect_to post_url(@post), notice: 'Post was successfully updated.'
+    else
+      @labels = Label.all
+      render :edit
     end
   end
 

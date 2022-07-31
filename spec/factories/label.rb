@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :label do
-    name { 'Test' }
+    name { 'Label Test' }
   end
 end
