@@ -1,0 +1,8 @@
+ul.pagination {
+  display: flex;
+  justify-content: center;
+
+  li.active {
+    background-color: $main-color;
+  }
+}
