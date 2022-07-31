@@ -13,3 +13,19 @@
         %p
           %i.material-icons report
           = alert
+
+- if @post && @post.errors.any?
+  .container
+    .alert.card.red.lighten-4.red-text.text-darken-4
+      .card-content
+        %p
+          %i.material-icons report
+          = @post.errors.full_messages.first
+
+- if @user && @user&.errors.any?
+  .container
+    .alert.card.red.lighten-4.red-text.text-darken-4
+      .card-content
+        %p
+          %i.material-icons report
+          = @user.errors.full_messages.first

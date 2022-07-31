@@ -76,9 +76,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'rails-controller-testing'
 end
 
 group :development do
