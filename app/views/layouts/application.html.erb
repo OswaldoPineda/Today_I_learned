@@ -20,7 +20,6 @@
       <%= yield %>
     </div>
 
-    <%= params[:controller] %>
     <% if request.path == '/' || (request.path == '/posts' && params[:action] == 'index') %>
       <%= paginate @posts %>
     <% end %>
