@@ -1,24 +1,8 @@
-# README
+# Today I learned
+---
+Space to share your knowdlege about technology or learn something new in less than 2 minutes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Visit
+---
+Visit the [page here](http://today-i-learned-app-production.herokuapp.com/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
