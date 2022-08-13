@@ -20,7 +20,10 @@
       <%= yield %>
     </div>
 
-    <%= paginate @posts %>
+    <%= params[:controller] %>
+    <% if request.path == '/' || (request.path == '/posts' && params[:action] == 'index') %>
+      <%= paginate @posts %>
+    <% end %>
     <script src=' https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
   </body>
 </html>
