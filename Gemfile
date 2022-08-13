@@ -66,6 +66,9 @@ gem 'kaminari'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# run cron jobs
+gem 'whenever', require: false
+
 # linters
 gem 'haml_lint', require: false
 gem 'rubocop', require: false
@@ -79,6 +82,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'letter_opener'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers', '~> 5.0'

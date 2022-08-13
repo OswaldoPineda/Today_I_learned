@@ -5,8 +5,7 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   config.action_cable.url = "ws://localhost:3000/cable"
 
-  config.action_cable.allowed_request_origins = [/http:\/\/*/,
-                                                 /https:\/\/*/]
+  config.action_cable.allowed_request_origins = [%r{/http:\/\/*/}, %r{/https:\/\/*/}]
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -31,7 +30,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+        'Cache-Control': "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -75,4 +74,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_view.cache_template_loading = false
+
+  config.action_mailer.delivery_method = :letter_opener
 end
