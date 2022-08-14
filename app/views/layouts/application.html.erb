@@ -25,4 +25,7 @@
     <% end %>
     <script src=' https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
   </body>
+  <% if request.path == '/' %>
+    <%= render 'shared/footer' %>
+  <% end %>
 </html>
