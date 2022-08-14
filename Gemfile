@@ -69,6 +69,9 @@ gem 'kaminari'
 # run cron jobs
 gem 'whenever', require: false
 
+# mailer service
+gem 'sendgrid-ruby'
+
 # linters
 gem 'haml_lint', require: false
 gem 'rubocop', require: false
