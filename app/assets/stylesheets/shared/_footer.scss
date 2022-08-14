@@ -1,8 +1,5 @@
 footer {
   background-color: $light-gray !important;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
 
   a, span, p {
     color: $main-text-color;
@@ -14,5 +11,8 @@ footer {
 
   input[type='submit'] {
     color: white;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
   }
 }

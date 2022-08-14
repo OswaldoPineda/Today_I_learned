@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class NewslettersController < ApplicationController
-  # skip_before_action :authenticate_user!
-  # before_action :set_newsletter, only: [:destroy]
-
   def create
+    if Newsletter.find_by(newsletter_params)
+      redirect_to root_path, notice: 'Email was already subscribed.'
+      return
+    end
+
     @newsletter = Newsletter.create(newsletter_params)
     if @newsletter.save
       redirect_to root_path, notice: 'Email was successfully subscribed.'
