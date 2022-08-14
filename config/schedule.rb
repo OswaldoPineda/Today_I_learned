@@ -21,6 +21,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at: '4:30 am' do
+every 1.day, at: '12:35am' do
   rake 'weekly_newsletter_email'
 end
