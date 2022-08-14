@@ -312,6 +312,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
     ruby-progressbar (1.11.0)
+    ruby_http_client (3.5.5)
     ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
     rubycritic (4.6.1)
@@ -333,6 +334,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sendgrid-ruby (6.6.2)
+      ruby_http_client (~> 3.4)
     sexp_processor (4.16.0)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
@@ -415,6 +418,7 @@ DEPENDENCIES
   rubocop-rails
   rubycritic
   sassc-rails
+  sendgrid-ruby
   shoulda-matchers (~> 5.0)
   sprockets-rails
   stimulus-rails
