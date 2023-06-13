@@ -11,7 +11,7 @@
   "devDependencies": {
     "husky": "^7.0.4",
     "lint-staged": "^12.4.0",
-     "eslint": "^7.4.0"
+    "eslint": "^7.4.0"
   },
   "lint-staged": {
     "*.js": "eslint",
@@ -21,5 +21,6 @@
   "dependencies": {
     "marked": "^4.0.18"
   },
-  "pre-commit": "linters"
+  "pre-commit": "linters",
+  "packageManager": "yarn@1.22.17"
 }
