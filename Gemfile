@@ -72,6 +72,8 @@ gem 'whenever', require: false
 # mailer service
 gem 'sendgrid-ruby'
 
+gem 'execjs', '~> 2.7.0'
+
 # linters
 gem 'haml_lint', require: false
 gem 'rubocop', require: false

@@ -2,6 +2,7 @@
 
 ---
 options:
+  bin-cd: true
   compose: true
   label:
     fly_launch_runtime: rails
