@@ -82,5 +82,7 @@ test:
 production:
   <<: *default
   database: today_i_learned_production
-  username: today_i_learned
-  password: <%= ENV["TODAY_I_LEARNED_DATABASE_PASSWORD"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  port: <%= ENV["DATABASE_PORT"] %>
+  host: <%= ENV["DATABASE_HOST"] %>
