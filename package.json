@@ -9,9 +9,9 @@
     "linters:base": "$CMD rubocop haml-lint scss-lint eslint"
   },
   "devDependencies": {
+    "eslint": "^7.4.0",
     "husky": "^7.0.4",
-    "lint-staged": "^12.4.0",
-    "eslint": "^7.4.0"
+    "lint-staged": "^12.4.0"
   },
   "lint-staged": {
     "*.js": "eslint",
