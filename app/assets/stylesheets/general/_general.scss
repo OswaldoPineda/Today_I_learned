@@ -75,3 +75,13 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+code {
+  background-color: slategrey;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+pre code {
+  border-radius: 4px;
+}
