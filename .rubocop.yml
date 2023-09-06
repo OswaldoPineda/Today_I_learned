@@ -1,8 +1,7 @@
-require:
-  - rubocop-rails
-  - rubocop-performance
+# Metrics Cops
 
 AllCops:
+  NewCops: enable
   Exclude:
     - "bin/*"
     - "cache/**/*"
@@ -17,115 +16,38 @@ AllCops:
     - "db/schema.rb"
     - "config/initializers/*"
 
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.1.1
 
-Layout/LineLength:
-  Exclude:
-    - "db/seeds.rb"
-  Max: 120
-
-Style/Documentation:
-  Enabled: false
-
-Style/StringLiterals:
-  Enabled: false
-
-Layout/FirstHashElementIndentation:
-  EnforcedStyle: special_inside_parentheses
-  SupportedStyles:
-    - special_inside_parentheses
-    - consistent
-    - align_braces
-  IndentationWidth: 4
-
-Layout/FirstArrayElementIndentation:
-  EnforcedStyle: special_inside_parentheses
-  SupportedStyles:
-    - special_inside_parentheses
-    - consistent
-    - align_braces
-  IndentationWidth: 4
-
-Style/BlockComments:
-  Enabled: false
-
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-  SupportedStyles:
-    - indented
-    - indented_relative_to_receiver
-  # By default, the indentation width from Style/IndentationWidth is used
-  # But it can be overridden by setting this parameter
-  IndentationWidth: 4
-
-Metrics/AbcSize:
-  Max: 25
-
-Metrics/BlockLength:
-  Exclude:
-    - "Rakefile"
-    - "**/*.rake"
-    - "spec/**/*.rb"
-    - "config/environments/*.rb"
-    - "config/routes.rb"
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Max: 100
+  Enabled: true
 
 Metrics/ModuleLength:
-  Exclude:
-    - "spec/**/*.rb"
+  Description: 'Avoid modules longer than 100 lines of code.'
+  Max: 100
+  Enabled: true
+
+Metrics/ParameterLists:
+  Description: 'Pass no more than four parameters into a method.'
+  Max: 4
+  Enabled: true
+
+Layout/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+  Enabled: true
+
+Layout/IndentationWidth:
+  Description: 'Use 2 spaces for indentation.'
+  Width: 2
+  Enabled: true
 
 Metrics/MethodLength:
-  Max: 15
+  Description: 'Avoid methods longer than 5 lines of code.'
+  StyleGuide: '<https://github.com/bbatsov/ruby-style-guide#short-methods>'
+  Max: 8
+  Enabled: true
 
-Style/RaiseArgs:
-  EnforcedStyle: compact
-
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Style/ExponentialNotation:
-  Enabled: true
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: true
-Style/SlicingWithRange:
-  Enabled: true
-Lint/DeprecatedOpenSSLConstant:
-  Enabled: true
-Lint/MixedRegexpCaptureTypes:
-  Enabled: true
-Style/RedundantRegexpEscape:
+Style/ClassAndModuleChildren:
   Enabled: false
-Style/RedundantRegexpCharacterClass:
-  Enabled: true
-Style/RedundantFetchBlock:
-  Enabled: false
-Style/AccessorGrouping:
-  Enabled: true
-Style/BisectedAttrAccessor:
-  Enabled: true
-Style/RedundantAssignment:
-  Enabled: true
-Performance/AncestorsInclude:
-  Enabled: true
-Performance/BigDecimalWithNumericArgument:
-  Enabled: true
-Performance/RedundantSortBlock:
-  Enabled: true
-Performance/RedundantStringChars:
-  Enabled: true
-Performance/ReverseFirst:
-  Enabled: true
-Performance/SortReverse:
-  Enabled: true
-Performance/Squeeze:
-  Enabled: true
-Performance/StringInclude:
-  Enabled: true
