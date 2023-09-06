@@ -1,0 +1,5 @@
+- if @posts.empty?
+  %h1 Not Posts available
+
+- @posts.each do |post|
+  = render partial: 'posts/post', locals: { post: post }

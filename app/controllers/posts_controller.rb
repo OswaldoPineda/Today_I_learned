@@ -4,10 +4,21 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[user_posts]
 
   # GET /posts or /posts.json
   def index
     @posts = Post.all.order("id DESC").page params[:page]
+  end
+
+  def user_posts
+    user = User.find_by(id: params[:id])
+
+    if user
+      @posts = user.posts.order("id DESC").page params[:page]
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /posts/1 or /posts/1.json
