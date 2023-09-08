@@ -27,8 +27,8 @@
 
 %nav.nav.main-bg
   .nav-wrapper.container
-    = link_to root_path, class: 'brand-logo' do
-      %img{ src: asset_path('logo-header-blank.png', type: :image) }
+    = link_to(root_path, class: 'brand-logo') do
+      = image_tag('logo-header-blank.png')
     %ul.right.hide-on-med-and-down
       %li= link_to "New Post", new_post_path, class: 'main-btn waves-effect waves-light btn'
       %li= link_to "My learned", posts_path
