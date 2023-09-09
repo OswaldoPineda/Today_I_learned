@@ -6,6 +6,10 @@
   html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
+    = f.label :username
+    %br/
+    = f.text_field :username, autofocus: true, autocomplete: "username"
+  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
