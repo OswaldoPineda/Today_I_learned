@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require 'rails_helper'
 
-describe "post", type: :feature do
+# rubocop:disable Metrics/BlockLength
+describe 'post', type: :feature do
   before :each do
     @post = FactoryBot.build(:post)
     @user = FactoryBot.create(:user)
     FactoryBot.create(:label)
     visit '/users/sign_in'
-    within("#new_user") do
+    within('#new_user') do
       fill_in 'Email', with: User.last.email
       fill_in 'Password', with: 'test1234'
     end
@@ -77,7 +78,7 @@ describe "post", type: :feature do
     it 'successfully' do
       visit posts_path(@post)
       click_on 'delete'
-      expect(page).to have_content "Post was successfully destroyed"
+      expect(page).to have_content 'Post was successfully destroyed'
     end
   end
 
@@ -93,3 +94,5 @@ describe "post", type: :feature do
     end
   end
 end
+
+# rubocop:enable Metrics/BlockLength
