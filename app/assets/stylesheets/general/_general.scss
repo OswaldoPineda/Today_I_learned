@@ -6,12 +6,12 @@
   background: $secondary-color;
 
   &:hover {
-    background: #f2744a;
+    background: $gray;
   }
 }
 
 .main-bg {
-  background: $main-color-new-version;
+  background: $main-color;
 }
 
 .main-text-color {

@@ -22,4 +22,12 @@ nav.nav {
   .brand-logo img {
     width: 12rem;
   }
+
+  ul li a {
+    color: $black;
+  }
+
+  ul li a.main-btn.btn {
+    color: $white;
+  }
 }
