@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require 'rails_helper'
 
-describe "Sign un", type: :feature do
+describe 'Sign un', type: :feature do
   before :each do
     @user = FactoryBot.build(:user)
     visit '/users/sign_up'
   end
 
-  it "signs me up" do
-    within("#new_user") do
+  it 'signs me up' do
+    within('#new_user') do
+      fill_in 'Username', with: @user.username
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
       fill_in 'Confirm Password', with: @user.password
@@ -18,8 +19,9 @@ describe "Sign un", type: :feature do
     expect(page).to have_content ' Welcome! You have signed up successfully'
   end
 
-  it "signs me in with empty values" do
-    within("#new_user") do
+  it 'signs me in with empty values' do
+    within('#new_user') do
+      fill_in 'Username', with: ''
       fill_in 'Email', with: ''
       fill_in 'Password', with: ''
       fill_in 'Confirm Password', with: ''
