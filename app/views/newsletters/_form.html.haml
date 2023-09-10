@@ -1,6 +1,6 @@
 = form_for Newsletter.new do |f|
   .col-md-12
     .col-md-6
-      = f.text_field :email, class: 'form-control', placeholder: 'Email'
+      = f.email_field :email, class: 'form-control', placeholder: 'Email'
   .col-md-12.white-text
     = f.submit "Subscribe", class: 'waves-effect waves-light btn-small'
