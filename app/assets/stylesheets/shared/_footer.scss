@@ -7,6 +7,11 @@ footer {
 
   i.waves-effect {
     width: 100% !important;
+    background-color: $black;
+
+    &:hover {
+      background-color: $gray;
+    }
   }
 
   input[type='submit'] {

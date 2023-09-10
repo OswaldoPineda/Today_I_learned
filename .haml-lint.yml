@@ -26,15 +26,13 @@ linters:
       - Lint/BlockAlignment
       - Lint/EndAlignment
       - Lint/Void
-      - Layout/AlignHash
-      - Layout/AlignParameters
+      - Layout/HashAlignment
       - Layout/CaseIndentation
       - Layout/ElseAlignment
       - Layout/EmptyLineAfterGuardClause
       - Layout/EmptyLineAfterMagicComment
       - Layout/EndOfLine
       - Layout/IndentationWidth
-      - Layout/TrailingBlankLines
       - Layout/TrailingWhitespace
       - Layout/TrailingEmptyLines
       - Layout/LineLength
