@@ -2,15 +2,16 @@
   .col.s12.m6
     .card.card-container
       .card-content.white-text
-        %span.card-title
-          = post.title
+        .card-header
+          %h2.card-title
+            = post.title
+          - unless post.labels.empty?
+            .labels
+              - post.labels.each do |label|
+                %a.new.badge.badge-main{ href: "#" }= label.name
+        .divider.divider-margin
         = markdown(post.content)
       .card-action
-        - unless post.labels.empty?
-          .labels
-            - post.labels.each do |label|
-              %a.new.badge.badge-main{ href: "#" }= label.name
-          .divider.divider-margin
         = link_to user_posts_path(id: post.user.id), class: "user-info valing-wrapper user-email" do
           %i.material-icons account_circle
           %span= post.user.username

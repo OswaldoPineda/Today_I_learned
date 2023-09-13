@@ -54,7 +54,18 @@
 }
 
 .card-content {
-  span, p {
+  h2, span, p {
     color: $black;
   }
+
+  h2 {
+    margin: 10px 0;
+    padding-right: 24px;
+   }
+
+   .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
 }
