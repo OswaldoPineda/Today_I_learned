@@ -1,23 +1,26 @@
 %h1 Listing posts
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th
-      %th
-      %th
-
-  %tbody
-    - @posts.each do |post|
+- if @posts.blank?
+  = link_to 'Create your firts post', new_post_path, class: 'btn btn-primary'
+- else
+  %table
+    %thead
       %tr
-        %td= post.title
-        %td
-          = link_to post do
-            %i.material-icons remove_red_eye
-        %td
-          = link_to edit_post_path(post) do
-            %i.material-icons.orange-text create
-        %td
-          = button_to post, method: :delete, class: 'delete-post', data: { confirm: 'Are you sure?' } do
-            %i.material-icons.red-text delete
+        %th Title
+        %th
+        %th
+        %th
+
+      %tbody
+        - @posts.each do |post|
+          %tr
+            %td= post.title
+            %td
+              = link_to post do
+                %i.material-icons remove_red_eye
+            %td
+              = link_to edit_post_path(post) do
+                %i.material-icons.orange-text create
+            %td
+              = button_to post, method: :delete, class: 'delete-post', data: { confirm: 'Are you sure?' } do
+                %i.material-icons.red-text delete
