@@ -33,7 +33,6 @@ TIL-Dev is a user-friendly mobile application designed exclusively for capturing
 
   - Postgres
     - Install postgresql and start the server:
-
       ```
         # install postgres
         brew install postgresql
@@ -48,9 +47,9 @@ TIL-Dev is a user-friendly mobile application designed exclusively for capturing
 
       First install [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) and then:
 
-      `nvm install 18.15.0`
+      - `nvm install 18.15.0`
 
-      `nvm use 18.15.0`
+      - `nvm use 18.15.0`
 
   - Install the app
     - Dependencies are installed using `bundle && yarn`
@@ -80,4 +79,4 @@ TIL-Dev is a user-friendly mobile application designed exclusively for capturing
 <hr/>
 
 ### Visit our page
-- Visit the [page here](http://today-i-learned-app-production.herokuapp.com/).
+- Visit the [page here](https://www.til-dev.com/).
