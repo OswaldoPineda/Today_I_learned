@@ -1,21 +1,21 @@
 # Today I learned
-TIL-Dev is a user-friendly mobile application designed exclusively for capturing and sharing daily "Today I Learned" (TIL) moments. With a seamless and intuitive interface, users can easily jot down interesting facts, insights, or new knowledge they acquire throughout the day. The app focuses on enhancing learning experiences and fostering a community of curious minds.|
+TIL-Dev is a user-friendly web application designed exclusively for capturing and sharing daily "Today I Learned" (TIL) moments. With a seamless and intuitive interface, users can easily jot down interesting facts, insights, or new knowledge they acquire throughout the day. The app focuses on enhancing learning experiences and fostering a community of curious minds.|
 
 <hr />
 
 ### How to Create a TIL (Today I Learned) Post:
 - Create a new account to access our platform.
-- Click on the new post button in the navigation bar.
+- Click on the `new post` button in the navigation bar.
 - In this section, fill out three fields:
   - Title: We recommend creating a title that is completely descriptive, enabling anyone to understand the topic you've learned about instantly. 🔥
   - Description: This field supports Markdown, allowing you to add a detailed description of your learning topic. 💬
   - Label: Labels are required to categorize the post effectively. 🏷️
 
-- Finally publish the TIL and enjoy share your knowledge with our community. 🚀
+- Finally, publish the TIL and enjoy sharing your knowledge with our community. 🚀
 <hr />
 
 ### How to create an issue to report a bug.
-- Create ticket accesing of our [github issues dashboard](https://github.com/OswaldoPineda/Today_I_learned/issues).
+- Create ticket access to our [github issues dashboard](https://github.com/OswaldoPineda/Today_I_learned/issues).
 - Use our [issue template](ISSUE_TEMPLATE.md)
 <hr />
 
@@ -59,22 +59,22 @@ TIL-Dev is a user-friendly mobile application designed exclusively for capturing
     -   `rails s`
 
   - Test Suite
-    - Rspec is configured, you can run the them with `bundle exec rspec`
+    - Rspec is configured, you can run them with `bundle exec rspec`
 
 <hr />
 
 ### How to create a Pull Request
 
-- All our infresturce to create pull request is over branches please following this steps:
-  - create a new branch:
+- All our infrastructure to create pull requests is over branches please follow these steps:
+  - Create a new branch:
     - `git checkout -b feature/<'something-cool-feature-description'>`
-  - create a commit (and is important pass in green all our linterns):
+  - Create a commit (and is important to pass in green all our linterns):
     - `git commit`
     - And following this [instructions](COMMIT_TEMPLATE.md) to fill your commit with the best practices.
-  - Push our branch to github:
+  - Push our branch to GitHub:
     - `git push origin  feature/<'something-cool-feature-description'>`
   - Fill the pull request template with the organization structure.
-  - reques a review to [Oswaldo Pineda](https://github.com/OswaldoPineda) or [Juanequex](https://github.com/juanequex).
+  - Request a review to [Oswaldo Pineda](https://github.com/OswaldoPineda) or [Juanequex](https://github.com/juanequex).
 
 <hr/>
 
