@@ -276,6 +276,8 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.7)
       io-console (~> 0.5)
+    requestjs-rails (0.0.10)
+      rails (>= 6.0.0)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -419,6 +421,7 @@ DEPENDENCIES
   rails-controller-testing
   redcarpet
   redis (~> 4.0)
+  requestjs-rails
   rspec-rails (~> 3.5)
   rubocop
   rubocop-performance
