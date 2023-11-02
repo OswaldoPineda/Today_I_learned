@@ -7,10 +7,11 @@ describe 'post', type: :feature do
   before :each do
     @post = FactoryBot.build(:post)
     @user = FactoryBot.create(:user)
+    @user.confirm
     FactoryBot.create(:label)
     visit '/users/sign_in'
     within('#new_user') do
-      fill_in 'Email', with: User.last.email
+      fill_in 'Email', with: @user.email
       fill_in 'Password', with: 'test1234'
     end
     click_button 'Log in'
@@ -71,11 +72,9 @@ describe 'post', type: :feature do
   end
 
   context 'delete post' do
-    before :each do
-      @post = FactoryBot.create(:post, :with_user)
-    end
-
     it 'successfully' do
+      @post.user = @user
+      @post.save!
       visit posts_path(@post)
       click_on 'delete'
       expect(page).to have_content 'Post was successfully destroyed'
@@ -83,11 +82,9 @@ describe 'post', type: :feature do
   end
 
   context 'view post' do
-    before :each do
-      @post = FactoryBot.create(:post, :with_user)
-    end
-
     it 'successfully' do
+      @post.user = @user
+      @post.save!
       visit post_path(@post)
       expect(page).to have_content @post.title
       expect(page).to have_content @post.content
