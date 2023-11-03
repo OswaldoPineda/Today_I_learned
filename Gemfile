@@ -60,6 +60,9 @@ gem 'html2haml'
 # makdown support
 gem 'redcarpet'
 
+# js requests
+gem 'requestjs-rails'
+
 # pagination
 gem 'kaminari'
 

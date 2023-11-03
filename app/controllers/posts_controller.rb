@@ -6,62 +6,53 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: %i[user_posts]
 
-  # GET /posts or /posts.json
   def index
-    @posts = current_user.posts.order("id DESC").page params[:page]
+    @posts = current_user.posts.order('id DESC').page params[:page]
   end
 
   def user_posts
     user = User.find_by(id: params[:id])
 
     if user
-      @posts = user.posts.order("id DESC").page params[:page]
+      @posts = user.posts.order('id DESC').page params[:page]
     else
       redirect_to root_path
     end
   end
 
-  # GET /posts/1 or /posts/1.json
   def show; end
 
-  # GET /posts/new
   def new
     @post = Post.new
     @labels = Label.all
   end
 
-  # GET /posts/1/edit
   def edit
-    @labels = Label.all
+    post = Post.find(params[:id])
+    @label = post.labels.first
   end
 
-  # POST /posts or /posts.json
   def create
-    @post = Post.new(title: params[:post][:title], content: params[:post][:content])
-    @post.add_user(current_user.id)
-    @post.add_labels(params[:post][:label_ids])
+    @post = build_post
 
     if @post.save
-      redirect_to post_url(@post), notice: 'Post was successfully created.'
+      redirect_to_post_with_success('Post was successfully created.')
     else
-      @labels = Label.all
       render :new
     end
   end
 
-  # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    @post.update_labels(params[:post][:label_ids])
+    @post.update_label(params[:post][:label_name])
 
     if @post.update(title: params[:post][:title], content: params[:post][:content])
-      redirect_to post_url(@post), notice: 'Post was successfully updated.'
+      redirect_to_post_with_success('Post was successfully updated.')
     else
       @labels = Label.all
       render :edit
     end
   end
 
-  # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
 
@@ -73,13 +64,29 @@ class PostsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :content, :label_ids)
+    params.require(:post).permit(:title, :content, :label_name)
+  end
+
+  def build_post
+    post = Post.new(title: post_params[:title], content: post_params[:content])
+    post.add_user(current_user)
+    post.add_labels(post_params[:label_name])
+
+    post
+  end
+
+  def save_post
+    @post.add_user(current_user.id)
+    @post.add_labels(params[:post][:label_name])
+    @post.save
+  end
+
+  def redirect_to_post_with_success(message)
+    redirect_to post_url(@post), notice: message
   end
 end

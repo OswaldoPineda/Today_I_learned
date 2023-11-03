@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :newsletters
-  resources :posts
-  devise_for :users
-  get '/users/:id/posts', to: 'posts#user_posts', as: "user_posts"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  post '/newsletters', to: 'newsletters#create'
 
-  # Defines the root path route ("/")
+  resources :labels, only: [:index]
+
+  resources :posts
+
+  devise_for :users
+
+  get '/users/:id/posts', to: 'posts#user_posts', as: 'user_posts'
+
   root 'home#index'
 end
