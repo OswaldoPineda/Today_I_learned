@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   post '/newsletters', to: 'newsletters#create'
 
-  resources :labels, only: [:index, :create]
+  resources :labels, only: [:index]
 
   resources :posts
 
