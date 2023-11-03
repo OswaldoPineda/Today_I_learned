@@ -1,5 +1,5 @@
 = form_for post do |f|
-  .row.post-form{ data: { controller: "post" } }
+  .row.post-form{ data: { controller: 'post' } }
     .col.s12.m6
       .row
         %h4 Title
@@ -15,8 +15,16 @@
             class: 'materialize-textarea white-input',
             'data-length': '10',
             data: { post_target: 'body', action: 'input->post#preview' }
-        = render 'select-labels', { labels: labels, post: post }
+        %div{ 'data-controller': 'label' } 
+          %div.chips
+            - if @label.present?
+              .chip
+                = @label.name
+                %i.close.material-icons close
+          %div#chips_inputcontainer{ 'data-label-target': 'container'}
+            - if @label.present?
+              %input{ type: 'hidden', name: 'post[label_name]', value: @label.name }
       .actions.row
-        = f.submit 'Save', class: "main-btn btn waves-effect waves-light w-100"
+        = f.submit 'Save', class: 'main-btn btn waves-effect waves-light w-100'
     .col.s12.m6
       = render 'preview', post: post
