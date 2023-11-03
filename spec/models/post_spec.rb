@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   subject { @post = build(:post) }
@@ -29,7 +29,7 @@ RSpec.describe Post, type: :model do
   describe 'add_labels' do
     it 'valid' do
       @label = create(:label)
-      subject.add_labels([@label.id])
+      subject.add_labels(@label.name)
       expect(subject.labels).to_not be_empty
     end
   end

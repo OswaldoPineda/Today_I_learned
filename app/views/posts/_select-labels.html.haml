@@ -1,9 +1,0 @@
-%h5 Labels
-.input-field
-  %select.white-input{ name: 'post[label_ids][]' }
-    %option{ value: '', disabled: 'disabled', selected: 'selected' } Select an option
-    - labels.each do |label|
-      - if post.labels.include?(label)
-        %option{ value: label.id, selected: true }= label.name
-      - else
-        %option{ value: label.id }= label.name

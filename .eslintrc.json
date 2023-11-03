@@ -1,19 +1,19 @@
 {
-  "parser": "espree",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false, // <== ADD THIS
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
   "env": {
     "browser": false,
     "node": false,
     "amd": false,
     "mocha": false,
     "jasmine": false
-  },
-
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
   },
 
   "rules": {

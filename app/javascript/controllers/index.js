@@ -5,3 +5,6 @@ application.register('post', PostController);
 
 import MaterializeController from 'controllers/materialize_controller';
 application.register('materialize', MaterializeController);
+
+import LabelController from 'controllers/label_controller';
+application.register('label', LabelController);
