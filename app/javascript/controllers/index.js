@@ -1,8 +1,10 @@
-import { application } from "controllers/application"
+import { application } from 'controllers/application';
 
-import PostController from "controllers/post_controller"
-application.register("post", PostController)
+import PostController from 'controllers/post_controller';
+application.register('post', PostController);
 
-import initMaterialize from "controllers/materialize"
+import MaterializeController from 'controllers/materialize_controller';
+application.register('materialize', MaterializeController);
 
-initMaterialize();
+import LabelController from 'controllers/label_controller';
+application.register('label', LabelController);

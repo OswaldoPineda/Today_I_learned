@@ -9,6 +9,7 @@
     "linters:base": "$CMD rubocop haml-lint scss-lint eslint"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.22.15",
     "eslint": "^7.4.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.0"

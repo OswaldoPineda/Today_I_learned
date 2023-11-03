@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   describe '#create' do
@@ -14,11 +14,11 @@ RSpec.describe PostsController, type: :controller do
         post_attributes = FactoryBot.attributes_for(:post)
         expect do
           post :create, params: {
-              post: {
-                  title: post_attributes[:title],
-                  content: post_attributes[:content],
-                  label_ids: [1]
-              }
+            post: {
+              title: post_attributes[:title],
+              content: post_attributes[:content],
+              label_name: @label.name
+            }
           }
         end.to change(Post, :count).by(1)
       end
@@ -26,23 +26,16 @@ RSpec.describe PostsController, type: :controller do
       it 'redirects to the new contact' do
         post_attributes = FactoryBot.attributes_for(:post)
         post :create, params: {
-            post: {
-                title: post_attributes[:title],
-                content: post_attributes[:content],
-                label_ids: [1]
-            }
+          post: {
+            title: post_attributes[:title],
+            content: post_attributes[:content],
+            label_name: @label.name
+          }
         }
         expect(subject.response).to redirect_to(post_path(Post.last))
       end
     end
 
-    # to add later
-    context "with invalid attributes" do
-      it "does not save the new contact" do
-      end
-
-      it "re-renders the new method" do
-      end
-    end
+    # to add scenario with not valid attributes later
   end
 end
