@@ -8,6 +8,9 @@
     "linters": "CMD='run-p -l' yarn linters:base",
     "linters:base": "$CMD rubocop haml-lint scss-lint eslint"
   },
+  "engines": {
+    "node": "16.0.0"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",
     "eslint": "^7.4.0",
