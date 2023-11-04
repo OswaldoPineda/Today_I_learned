@@ -1,5 +1,5 @@
 .row.card-row
-  .col.s12.m6
+  .col
     .card.card-container
       .card-content.white-text
         .card-header
@@ -10,7 +10,7 @@
               - post.labels.each do |label|
                 %a.new.badge.badge-main{ href: "#" }= label.name
         .divider.divider-margin
-        = markdown(post.content)
+        = post.content
       .card-action
         = link_to user_posts_path(id: post.user.id), class: "user-info valing-wrapper user-email" do
           %i.material-icons account_circle
