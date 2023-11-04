@@ -23,7 +23,9 @@
     "*.haml": "haml-lint"
   },
   "dependencies": {
-    "marked": "^4.0.18"
+    "@rails/actiontext": "^7.1.1",
+    "marked": "^4.0.18",
+    "trix": "^2.0.7"
   },
   "pre-commit": "linters",
   "packageManager": "yarn@1.22.17"

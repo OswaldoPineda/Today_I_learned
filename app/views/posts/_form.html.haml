@@ -1,30 +1,24 @@
 = form_for post do |f|
   .row.post-form{ data: { controller: 'post' } }
-    .col.s12.m6
-      .row
-        %h4 Title
-        .input-field
-          = f.text_field :title,
-            class: 'post-title white-input',
-            data: { post_target: 'title', action: 'input->post#preview' }
-      .row
-        %h5 Content
-        .input-field
-          = f.text_area :content,
-            id: 'text-area',
-            class: 'materialize-textarea white-input',
-            'data-length': '10',
-            data: { post_target: 'body', action: 'input->post#preview' }
-        %div{ 'data-controller': 'label' } 
-          %div.chips
-            - if @label.present?
-              .chip
-                = @label.name
-                %i.close.material-icons close
-          %div#chips_inputcontainer{ 'data-label-target': 'container'}
-            - if @label.present?
-              %input{ type: 'hidden', name: 'post[label_name]', value: @label.name }
-      .actions.row
-        = f.submit 'Save', class: 'main-btn btn waves-effect waves-light w-100'
-    .col.s12.m6
-      = render 'preview', post: post
+    .row
+      .input-field
+        = f.text_field :title,
+          placeholder: 'Enter a Title',
+          class: 'post-title white-input',
+          data: { post_target: 'title', action: 'input->post#preview' }
+    .row
+      %h5 Content
+      .input-field
+        = f.rich_text_area :content,
+          id: 'text-area'
+      %div{ 'data-controller': 'label' }
+        %div.chips
+          - if @label.present?
+            .chip
+              = @label.name
+              %i.close.material-icons close
+        %div#chips_inputcontainer{ 'data-label-target': 'container'}
+          - if @label.present?
+            %input{ type: 'hidden', name: 'post[label_name]', value: @label.name }
+    .actions.row
+      = f.submit 'Save', class: 'main-btn btn waves-effect waves-light w-100'
