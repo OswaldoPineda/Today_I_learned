@@ -12,3 +12,5 @@ pin "morphdom", to: "https://ga.jspm.io/npm:morphdom@2.6.1/dist/morphdom.js"
 pin "@rails/actioncable", to: "https://ga.jspm.io/npm:@rails/actioncable@7.0.3-1/app/assets/javascripts/actioncable.esm.js"
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin "marked", to: "https://ga.jspm.io/npm:marked@4.0.18/lib/marked.esm.js"
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.js"
