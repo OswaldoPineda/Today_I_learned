@@ -35,6 +35,8 @@ export default class extends ApplicationController {
       },
       limit: 1,
       minLength: 1,
+      placeholder: 'Enter a Label',
+      secondaryPlaceholder: ' ',
       onChipAdd: addChip,
       onChipDelete: deleteChip
     });
