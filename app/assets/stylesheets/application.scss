@@ -12,21 +12,26 @@
  *
  *= require_self
  */
-@import "materialize/components/color-variables";
-@import "materialize";
+@import
+  "actiontext.css",
+  "materialize/components/color-variables",
+  "materialize";
 
 // general
-@import "general/colors";
-@import "general/general";
-@import "pagination/pagination";
+@import
+  "general/colors",
+  "general/general",
+  "pagination/pagination";
 
 // posts
 @import "posts/post";
 
 // shared
-@import "shared/notification";
-@import "shared/navbar";
-@import "shared/footer";
+@import
+  "shared/notification",
+  "shared/navbar",
+  "shared/sessions",
+  "shared/footer";
 
 // devise
 @import "devise/forms";

@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { minimum: 5 }
   belongs_to :user
   has_and_belongs_to_many :labels, dependent: :destroy
+  has_rich_text :content
 
   def add_labels(name)
     return unless name
