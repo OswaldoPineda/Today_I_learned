@@ -8,3 +8,35 @@
 .adapt-links p {
   margin: 1rem 0 0;
 }
+
+.form-container > form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.update-buttton {
+  display: grid;
+}
+
+.unhappy-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#dropdown1 {
+  left: 725px !important;
+  top: 64px !important;
+}
+
+.cancel-account-button {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.cancel-account-button i {
+  margin-right: .5rem;
+}
