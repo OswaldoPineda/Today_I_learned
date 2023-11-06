@@ -21,8 +21,9 @@
             - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               %div
                 Currently waiting confirmation for: #{resource.unconfirmed_email}
-        .field.center
-          = f.label "change password (#{@minimum_password_length if @minimum_password_length } characters minimum )"
+        .field
+          .center
+            = f.label "change password (#{@minimum_password_length if @minimum_password_length } characters minimum )"
           .input-field.col.s12
             %i.material-icons.prefix lock_outline
             = f.password_field :password, autocomplete: "new-password", placeholder: "(leave blank if you don't want to change it)"
