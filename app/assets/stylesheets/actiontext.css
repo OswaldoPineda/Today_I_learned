@@ -43,6 +43,12 @@
   display: none;
 }
 
+.trix-content code {
+  background-color: black;
+  color: white;
+  padding: .2rem .4rem;
+}
+
 @media (min-width: 1040px) {
 
   #text-area {
