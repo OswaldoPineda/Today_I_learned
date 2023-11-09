@@ -7,7 +7,7 @@ function addTrixInlineStyle() {
   addEventListener('trix-initialize', event => {
     const element = event.target;
     const { toolbarElement, editor } = element;
-    const hasInit = toolbarElement.querySelector('[data-trix-attribute=inlineCode]') !== undefined;
+    const hasInit = toolbarElement.querySelector('[data-trix-attribute=inlineCode]') != undefined;
 
     if (hasInit) return;
 
