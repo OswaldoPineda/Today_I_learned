@@ -64,6 +64,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.hotwire_livereload.force_reload_paths << Rails.root.join("app/assets/stylesheets")
+  config.hotwire_livereload.force_reload_paths << Rails.root.join("app/javascript")
+  config.hotwire_livereload.force_reload_paths << Rails.root.join("app/views")
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
