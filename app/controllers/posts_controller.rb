@@ -4,6 +4,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :authorize_user, only: %i[edit update destroy]
   skip_before_action :authenticate_user!, only: %i[user_posts]
 
   def index
@@ -88,5 +89,12 @@ class PostsController < ApplicationController
 
   def redirect_to_post_with_success(message)
     redirect_to post_url(@post), notice: message
+  end
+
+  def authorize_user
+    unless current_user == @post.user
+      flash[:alert] = "You are not authorized to perform this action."
+      redirect_to posts_path
+    end
   end
 end
