@@ -3,8 +3,7 @@
     .card.card-container
       .card-content.white-text
         .card-header
-          %h2.card-title
-            = post.title
+          = link_to post.title, post_path(post), class: "card-title"
           - unless post.labels.empty?
             .labels
               - post.labels.each do |label|
