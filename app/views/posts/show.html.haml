@@ -1,6 +1,11 @@
-= render partial: 'posts/post', locals: { post: @post }
+.show-post-container
+  = render partial: 'posts/post', locals: { post: @post }
 
-- if current_user == @post.user
-  = link_to 'Edit', edit_post_path(@post)
-  \|
-= link_to 'Back', posts_path
+  .action-buttons-container
+    - if current_user == @post.user
+      = link_to edit_post_path(@post), class: "action-buttons-container__edit right-spacing main-btn waves-effect waves-light btn"  do
+        %i.material-icons.left edit
+        %span edit
+    = link_to current_user == @post.user ? posts_path : root_path, class: "action-buttons-container__back main-btn waves-effect waves-light btn"  do
+      %i.material-icons.left arrow_back
+      %span back

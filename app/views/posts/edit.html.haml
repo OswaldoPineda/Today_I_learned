@@ -1,5 +1,9 @@
-%h1 Editing post
+.edit-post-container
+  %h1.center-align.new-post-title Editing post
 
-= render 'form', post: @post, label: @label
+  = render 'form', post: @post, label: @label
 
-= link_to 'Back', posts_path
+  .action-buttons-container
+    = link_to posts_path, class: "action-buttons-container__back main-btn waves-effect waves-light btn"  do
+      %i.material-icons.left arrow_back
+      %span back
