@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
   before_action :authenticate_user!
   before_action :authorize_user, only: %i[edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[user_posts]
+  skip_before_action :authenticate_user!, only: %i[show user_posts]
 
   def index
     @posts = current_user.posts.order('id DESC').page params[:page]
