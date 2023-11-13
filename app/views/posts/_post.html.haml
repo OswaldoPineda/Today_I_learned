@@ -1,4 +1,4 @@
-.row.card-row
+.row.card-row#post-container
   .col
     .card.card-container
       .card-content.white-text
@@ -10,10 +10,15 @@
                 %a.new.badge.badge-main{ href: "#" }= label.name
         .divider.divider-margin
         = post.content
-      .card-action
-        = link_to user_posts_path(id: post.user.id), class: "user-info valing-wrapper user-email" do
-          %i.material-icons account_circle
-          %span= post.user.username
-        %span
-          Created at:
-          = post.created_at.strftime("%B %d, %Y")
+      .card-action.post-footer-container
+        .post-footer-container__author
+          = link_to user_posts_path(id: post.user.id), class: "user-info valing-wrapper user-email" do
+            %i.material-icons account_circle
+            %span= post.user.username
+          %span
+            Created at:
+            = post.created_at.strftime("%B %d, %Y")
+        .post-footer-container__share-post
+          %button#copyPathButton{"data-clipboard-text" => post_url(post.id)}
+            %span share
+            %i.material-icons share
