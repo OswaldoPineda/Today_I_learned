@@ -3,7 +3,7 @@
 # Represents a label associated with posts.
 # Labels can be used to categorize and organize posts
 class Label < ApplicationRecord
-  validates :name, presence: true
+  validates :name, length: { minimum: 1, maximum: 15 }, presence: true
   has_and_belongs_to_many :posts
 
   class << self

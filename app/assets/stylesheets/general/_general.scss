@@ -62,6 +62,7 @@ pre {
 a.badge.badge-main {
   background: $secondary-color;
   border-radius: 8px;
+  text-wrap: nowrap;
   color: $white !important;
   padding: 5px;
 }

@@ -68,6 +68,10 @@
     justify-content: space-between;
     align-items: center;
    }
+
+   .labels {
+    margin-left: 8px;
+   }
 }
 
 .new-post-title {
@@ -83,6 +87,7 @@
 .card-title {
   color: $black;
   text-transform: capitalize;
+  overflow: auto;
 }
 
 .show-post-container {
