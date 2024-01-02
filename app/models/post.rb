@@ -20,24 +20,14 @@ class Post < ApplicationRecord
   end
 
   def update_label(name)
-    label = find_or_create_label(name)
-    self.labels = [label].compact
-  end
+    return unless name
 
-  private
+    label = Label.find_by_variants(name)
 
-  def create_new_label(name)
-    Label.create(name: name.titleize).tap { |new_label| labels << new_label }
-  end
-
-  def find_or_create_label(name)
-    return Label.find_by_variants(name) if label_exists?(name)
-    return nil if name.blank?
-
-    create_new_label(name)
-  end
-
-  def label_exists?(name)
-    Label.find_by_variants(name).present?
+    begin
+      self.labels = [label || Label.create!(name: name.titleize)]
+    rescue ActiveRecord::RecordInvalid
+      errors.add(:label, 'is invalid')
+    end
   end
 end

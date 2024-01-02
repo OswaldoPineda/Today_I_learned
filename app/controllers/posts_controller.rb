@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   def update
     @post.update_label(params[:post][:label_name])
 
-    if @post.update(title: params[:post][:title], content: params[:post][:content])
+    if @post.errors.empty? && @post.update(title: params[:post][:title], content: params[:post][:content])
       redirect_to_post_with_success('Post was successfully updated.')
     else
       @labels = Label.all
@@ -92,9 +92,9 @@ class PostsController < ApplicationController
   end
 
   def authorize_user
-    unless current_user == @post.user
-      flash[:alert] = "You are not authorized to perform this action."
-      redirect_to posts_path
-    end
+    return if current_user == @post.user
+
+    flash[:alert] = 'You are not authorized to perform this action.'
+    redirect_to posts_path
   end
 end
