@@ -31,6 +31,7 @@
 }
 
 .trix-content {
+  overflow: auto;
   color: black;
 }
 
