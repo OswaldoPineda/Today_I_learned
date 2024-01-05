@@ -48,6 +48,8 @@
   background-color: black;
   color: white;
   padding: .2rem .4rem;
+  margin: 1px auto;
+  display: inline-block;
 }
 
 @media (min-width: 1040px) {
