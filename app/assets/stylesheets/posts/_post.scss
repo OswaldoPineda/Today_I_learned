@@ -86,8 +86,6 @@
 
 .card-title {
   color: $black;
-  text-transform: capitalize;
-  overflow: auto;
 }
 
 .show-post-container {
@@ -112,4 +110,42 @@
 
 .right-spacing {
   margin-right: 1rem;
+}
+
+.post-footer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#copyPathButton {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
+  border: $black 2px solid;
+  color: $black;
+  display: flex;
+  padding: .3rem .6rem;
+}
+
+#copyPathButton:hover {
+  background-color: $black;
+  color: $white;
+  cursor: pointer;
+}
+
+.alert-clipboard {
+  background-color: $main-color;
+  border-radius: 5px;
+  color: $black;
+  left: 50%;
+  padding: .4rem .6rem;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
 }
