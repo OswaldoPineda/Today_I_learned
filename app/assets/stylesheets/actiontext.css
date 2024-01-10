@@ -58,3 +58,7 @@
     min-height: 12rem
   }
 }
+
+.trix-content li { 
+  margin-left: 1.5em;
+}
