@@ -34,3 +34,6 @@
 
 node_modules/
 *.swo
+
+package-lock.json
+yarn.lock
