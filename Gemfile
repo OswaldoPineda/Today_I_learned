@@ -5,89 +5,39 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.6'
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
-
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
-
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
-
-# Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
-
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem 'importmap-rails'
-
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder'
-
-# Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
-# views
-gem 'haml'
-gem 'haml-rails', '~> 2.0'
-
-# materialize for views
-gem 'materialize-sass', '~> 1.0.0'
-
-# Use Sass to process CSS
-gem 'sassc-rails'
-
-# authentication
 gem 'devise', '~> 4.8', '>= 4.8.1'
-
-# haml converter
-gem 'html2haml'
-
-# makdown support
-gem 'redcarpet'
-
-# js requests
-gem 'requestjs-rails'
-
-# pagination
-gem 'kaminari'
-
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
-
-# run cron jobs
-gem 'rufus-scheduler'
-
-# mailer service
-gem 'sendgrid-ruby'
-
 gem 'execjs', '~> 2.7.0'
-
-# linters
 gem 'haml_lint', require: false
-gem 'rubocop', require: false
+gem 'haml-rails', '~> 2.0'
+gem 'haml'
+gem 'html2haml'
+gem 'importmap-rails'
+gem 'jbuilder'
+gem 'kaminari'
+gem 'materialize-sass', '~> 1.0.0'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'redcarpet'
+gem 'redis', '~> 4.0'
+gem 'requestjs-rails'
 gem 'rubocop-performance'
 gem 'rubocop-rails', require: false
+gem 'rubocop', require: false
 gem 'rubycritic', require: false
+gem 'sassc-rails'
+gem 'sendgrid-ruby'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'whenever', require: false
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'pry', '~> 0.14.2'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'letter_opener'
