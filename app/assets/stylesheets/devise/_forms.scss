@@ -16,7 +16,9 @@
     }
 
     input[type='checkbox'] {
+      cursor: pointer;
       opacity: 1;
+      pointer-events: auto;
     }
   }
 
