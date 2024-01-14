@@ -44,9 +44,10 @@
 }
 
 .user-email {
+  color: $black !important;
   display: flex;
+  font-weight: 500;
   width: fit-content;
-  color: $tomato !important;
 }
 
 .card-container {
@@ -117,6 +118,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  &__author > span {
+    color: $text-gray;
+  }
 }
 
 #copyPathButton {

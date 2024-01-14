@@ -1,9 +1,60 @@
-%p Dear Followers:
-%p Those are the lastest entries to our blog. We invite you to read and share everything we did on this week.
-%br/
-%table
-  - @post.each do |post|
-    %tr{style: "display:flex; float:left; clear:both;"}
-      %td{style: "display:flex; float:left; clear:both; height: 80px; width: 100px;"}
-        %p= post.title
-      %td{style: "display:flex; float:left; clear:both;"}
+%html
+  %head
+    %title  Email Newsletter
+  %body
+    %meta{:http_equiv => "Content-type", :name => "viewport", :content => "initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width"}
+
+    %table{:dir => "ltr", :style => "background-color:#ffffff;width:100%;"}
+      %tr
+        %td{:align => "center", :style => "text-align: center;padding: 20px 0; font-family:Helvetica,Arial,sans-serif;background: #D1F6FE;"}
+          %a{:href => "https://www.til-dev.com", :style => "text-decoration: none; font-weight: bold; color: #006699;; color:#888888;font-size:22px;text-decoration:none;"}
+            %img{:src => "https://www.til-dev.com/assets/logo-header-blank-d54ec403d53aba7529bce8df61b73baf93213da263a9c081f63b3e4735e6fa15.png", :alt => "Today I Learned logo", :style => "width: 12rem;"}
+
+    - @post.each do |post|
+      %table{:dir => "ltr", :style => "width:100%;background:white;padding:0;border-spacing:0;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:200;line-height:1.3;vertical-align:top;"}
+        %td{:style => "vertical-align:top;padding:0;font-family:Helvetica,Arial,sans-serif;"}
+          %table{:dir => "ltr", :align => "center", :style => "border-spacing:0;background:#CCCCCC;margin:10px auto;padding:0;text-align:center;vertical-align:top;width:100%;max-width: 700px;"}
+            %tbody
+              %tr
+                %td{:style => "-moz-hyphens:auto;-webkit-hyphens:auto;border-collapse:collapse!important;color:#0a0a0a;hyphens:auto;line-height:1.3;margin:0;padding:0;text-align:left;vertical-align:top;word-wrap:normal"}
+                  <!--   Beginning of Popular Topic   -->
+                  %table{:dir => "ltr", :style => "width:100%"}
+                    %tbody
+                      %tr
+                        %td{:style => "margin:0;padding:0 0 0 16px;text-align:left;vertical-align:top;"}
+                          %p{:style => "color:#8f8f8f;line-height:1.3;margin: 20px 0 0 0;"}
+                            - post.labels.each do |label|
+                              %span{:style => "background: #2a2a2a;border-radius: 8px;text-wrap: nowrap;color: #fff;padding: 5px;", :data_drop_close => "true"}= label.name
+                        %td{:style => "margin:0;padding:0 16px 0 0;text-align:right;vertical-align:top;"}
+                          %p{:style => "color:#8f8f8f;line-height:1.3;margin:20px 0 0 0;font-weight:400;"}= post.created_at.strftime("%B %d, %Y")
+
+                  %table{:dir => "ltr", :style => "vertical-align:top;width:100%"}
+                    %tbody
+                      %tr
+                        %td{:style => "padding:0 8px 8px 16px; text-align:left; width:100%;max-width: 600px;overflow: auto;"}
+                          %h2{:style => "font-size:24px;font-weight:400;line-height:1.3;margin:0;padding:0;word-wrap:normal"}
+                            %strong= post.title
+
+                      %table{:dir => "ltr", :style => "border-bottom:1px solid #f3f3f3;padding:0;text-align:left;vertical-align:top;width:100%"}
+                        %tbody
+                          %tr
+                            %td{:style => "color:#0a0a0a;font-size:14px;padding:0 16px 0 16px;text-align:left;width:100%;font-weight:normal;"}
+                              %p= truncate(post.content.to_plain_text, length: 100) # Adjust the length as per your requirement
+
+                      %table{:dir => "ltr", :style => "padding:0;text-align:left;vertical-align:top;width:100%; margin-top:20px;"}
+                        %tbody
+                          %tr
+                            %td{:style => "padding:0 8px 16px 16px;text-align:left;white-space:nowrap;vertical-align:top;width:75px"}
+                              %a{href: "http://www.til-dev.com/posts/#{post.id}", :style => "text-decoration: none; font-weight: bold; color: #006699;; background-color: #2F70AC; color: #FFFFFF;; width:100%;text-decoration:none;padding:8px 16px;white-space:nowrap;"}
+                                Read More
+
+                            %td{:style => "line-height:1.3;padding:0 16px 0 8px;text-align:right;white-space:nowrap;vertical-align:top;"}
+                  <!--   End of Popular Topic   -->
+
+    %div{:dir => "ltr", :style => "color:#666; font-size:95%; text-align:center; padding-top:15px;"}
+      This summary is sent from
+      %a{:href => "https://www.til-dev.com", :style => "text-decoration: none; font-weight: bold; color: #006699;; color: #0088cc"}
+        TIL-Dev
+      every Monday 
+      %a{:href => "https://forum.sublimetext.com/email/unsubscribe/dummytext", :style => "text-decoration: none; font-weight: bold; color: #006699;; color: #0088cc"}
+        click here to unsubscribe.

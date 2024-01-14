@@ -70,7 +70,7 @@ gem 'kaminari'
 gem "image_processing", "~> 1.2"
 
 # run cron jobs
-gem 'whenever', require: false
+gem 'rufus-scheduler'
 
 # mailer service
 gem 'sendgrid-ruby'
