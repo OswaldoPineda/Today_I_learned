@@ -1,0 +1,8 @@
+%h4 Unsubscribe from Mysite Emails
+%p
+  By unsubscribing, you will no longer receive email...
+= form_for @newsletter, url: newsletters_update_path(email: @newsletter.email) do |f|
+  = f.hidden_field :subscription, value: false
+  = f.submit 'Unsubscribe'
+  %br
+  = link_to 'Cancel', root_url

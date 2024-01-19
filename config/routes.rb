@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   post '/newsletters', to: 'newsletters#create'
+  get '/newsletters/unsubscribe', to: "newsletters#unsubscribe"
+  patch '/newsletters/update'
 
   resources :labels, only: [:index]
 

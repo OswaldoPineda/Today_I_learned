@@ -15,6 +15,20 @@ class NewslettersController < ApplicationController
     end
   end
 
+  def unsubscribe
+    email = Base64.strict_decode64(params[:email])
+    @newsletter = Newsletter.find_by(email: email)
+  end
+
+  def update
+    @newsletter = Newsletter.find_by(email: params[:email])
+    if @newsletter.update(subscription: false)
+      redirect_to root_url, notice: 'Subscription Cancelled'
+    else
+      render :unsubscribe, alert: 'There was a problem, try again latter'
+    end
+  end
+
   private
 
   def set_newsletter
@@ -22,6 +36,6 @@ class NewslettersController < ApplicationController
   end
 
   def newsletter_params
-    params.require(:newsletter).permit(:email)
+    params.require(:newsletter).permit(:email, :subscription)
   end
 end
