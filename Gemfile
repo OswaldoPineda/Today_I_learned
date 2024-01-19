@@ -22,6 +22,7 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'redcarpet'
 gem 'redis', '~> 4.0'
 gem 'requestjs-rails'
+gem 'rufus-scheduler', '~> 3.2'
 gem 'rubocop-performance'
 gem 'rubocop-rails', require: false
 gem 'rubocop', require: false
