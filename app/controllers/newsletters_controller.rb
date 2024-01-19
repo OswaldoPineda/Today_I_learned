@@ -2,16 +2,16 @@
 
 class NewslettersController < ApplicationController
   def create
-    if Newsletter.find_by(newsletter_params)
-      redirect_to root_path, notice: 'Email was already subscribed.'
-      return
+    @newsletter = Newsletter.find_or_initialize_by(newsletter_params)
+
+    if @newsletter.new_record?
+      create_subscription_and_redirect(@newsletter)
     end
 
-    @newsletter = Newsletter.create(newsletter_params)
-    if @newsletter.save
-      redirect_to root_path, notice: 'Email was successfully subscribed.'
-    else
-      redirect_to root_path
+    if @newsletter.subscription
+      redirect_to_root_with_success 'Email was already subscribed.'
+    elsif @newsletter.update(subscription: true)
+      redirect_to_root_with_success 'Email was successfully subscribed.'
     end
   end
 
@@ -23,7 +23,7 @@ class NewslettersController < ApplicationController
   def update
     @newsletter = Newsletter.find_by(email: params[:email])
     if @newsletter.update(subscription: false)
-      redirect_to root_url, notice: 'Subscription Cancelled'
+      redirect_to_root_with_success 'Subscription Cancelled'
     else
       render :unsubscribe, alert: 'There was a problem, try again latter'
     end
@@ -37,5 +37,14 @@ class NewslettersController < ApplicationController
 
   def newsletter_params
     params.require(:newsletter).permit(:email, :subscription)
+  end
+
+  def redirect_to_root_with_success(message)
+    redirect_to root_url, notice: message
+  end
+
+  def create_subscription_and_redirect
+    @newsletter.save
+    redirect_to_root_with_success 'Email was successfully subscribed.'
   end
 end
