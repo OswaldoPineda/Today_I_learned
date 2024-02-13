@@ -6,12 +6,12 @@ class NewslettersController < ApplicationController
 
     if @newsletter.new_record?
       create_subscription_and_redirect(@newsletter)
-    end
-
-    if @newsletter.subscription
-      redirect_to_root_with_success 'Email was already subscribed.'
-    elsif @newsletter.update(subscription: true)
-      redirect_to_root_with_success 'Email was successfully subscribed.'
+    else
+      if @newsletter.subscription
+        redirect_to_root_with_success 'Email was already subscribed.'
+      elsif @newsletter.update(subscription: true)
+        redirect_to_root_with_success 'Email was successfully subscribed.'
+      end
     end
   end
 
@@ -43,8 +43,8 @@ class NewslettersController < ApplicationController
     redirect_to root_url, notice: message
   end
 
-  def create_subscription_and_redirect
-    @newsletter.save
+  def create_subscription_and_redirect(newsletter)
+    newsletter.save
     redirect_to_root_with_success 'Email was successfully subscribed.'
   end
 end
