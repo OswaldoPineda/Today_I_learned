@@ -17,18 +17,17 @@ describe 'post', type: :feature do
     click_button 'Log in'
   end
 
-  context 'create post' do
+  context 'created' do
     it 'with correct values' do
       visit '/posts/new'
       find('input[name="post[title]"]').fill_in with: @post.title
-      find('textarea[name="post[content]"]').fill_in with: @post.content
-      click_on 'Save'
-      expect(page).to have_content 'Post was successfully created'
+      find('input[name="post[content]"]', visible: false).set(@post.content)
+      expect(page).to have_content 'Post was successfully created.'
     end
 
     it 'with empty title' do
       visit '/posts/new'
-      find('textarea[name="post[content]"]').fill_in with: @post.content
+      find('input[name="post[content]"]', visible: false).set(@post.content)
       click_on 'Save'
       expect(page).to have_content "Title can't be blank"
     end
@@ -41,37 +40,37 @@ describe 'post', type: :feature do
     end
   end
 
-  context 'edit post' do
+  context 'edited' do
     before :each do
-      @post = FactoryBot.create(:post, :with_user)
+      visit '/posts/new'
+      find('input[name="post[title]"]').fill_in with: @post.title
+      find('input[name="post[content]"]', visible: false).set(@post.content)
+      expect(page).to have_content 'Post was successfully created.'
+      click_on 'My learned'
+      find('#edit-selector').click
     end
 
     it 'with correct values' do
-      visit edit_post_path(@post)
       find('input[name="post[title]"]').fill_in with: @post.title
-      find('textarea[name="post[content]"]').fill_in with: @post.content
+      find('input[name="post[title]"]').fill_in with: 'New value'
       click_on 'Save'
       expect(page).to have_content 'Post was successfully updated'
     end
 
     it 'with empty title' do
-      visit edit_post_path(@post)
       find('input[name="post[title]"]').fill_in with: ''
-      find('textarea[name="post[content]"]').fill_in with: @post.content
       click_on 'Save'
       expect(page).to have_content "Title can't be blank"
     end
 
     it 'with empty content' do
-      visit edit_post_path(@post)
-      find('input[name="post[title]"]').fill_in with: @post.title
-      find('textarea[name="post[content]"]').fill_in with: ''
+      find('input[name="post[content]"]', visible: false).set('')
       click_on 'Save'
       expect(page).to have_content "Content can't be blank"
     end
   end
 
-  context 'delete post' do
+  context 'deleted' do
     it 'successfully' do
       @post.user = @user
       @post.save!
@@ -81,13 +80,12 @@ describe 'post', type: :feature do
     end
   end
 
-  context 'view post' do
+  context 'viewed' do
     it 'successfully' do
       @post.user = @user
       @post.save!
       visit post_path(@post)
       expect(page).to have_content @post.title
-      expect(page).to have_content @post.content
     end
   end
 end

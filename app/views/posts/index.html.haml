@@ -19,7 +19,7 @@
               = link_to post do
                 %i.material-icons remove_red_eye
             %td
-              = link_to edit_post_path(post) do
+              = link_to edit_post_path(post), id: "edit-selector"  do
                 %i.material-icons.orange-text create
             %td
               = button_to post, method: :delete, class: 'delete-post', data: { confirm: 'Are you sure?' } do
