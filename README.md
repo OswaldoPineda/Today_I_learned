@@ -61,6 +61,9 @@ TIL-Dev is a user-friendly web application designed exclusively for capturing an
   - Test Suite
     - Rspec is configured, you can run them with `bundle exec rspec`
 
+  - Configure Husky
+    - Change your git hook folder by running `git config core.hooksPath .husky/` on your terminal
+
 <hr />
 
 ### How to create a Pull Request
