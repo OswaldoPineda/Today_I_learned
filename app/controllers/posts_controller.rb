@@ -8,14 +8,14 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show user_posts]
 
   def index
-    @posts = current_user.posts.order('id DESC').page params[:page]
+    @posts = current_user.posts.ordered.page params[:page]
   end
 
   def user_posts
     user = User.find_by(id: params[:id])
 
     if user
-      @posts = user.posts.order('id DESC').page params[:page]
+      @posts = user.posts.ordered.page params[:page]
     else
       redirect_to root_path
     end
