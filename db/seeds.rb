@@ -24,7 +24,8 @@ labels = [
   'Typescript',
   'Helpers',
   'Sass',
-  'Shell'
+  'Shell',
+  'Unlabeled'
 ]
 
 labels.each do |label|
