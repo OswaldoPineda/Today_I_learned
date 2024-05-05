@@ -1,0 +1,7 @@
+%div.row
+  %p.col Search By Label
+  %div.col.label-container{data: {controller: 'active-label'}}
+    = link_to 'All', root_path, id: 'default', class: 'new badge badge-secondary pill'
+    - @labels.each do |label|
+      = link_to root_path(label_id: label.id), id: label.id, class: 'new badge badge-secondary pill' do
+        = label.name

@@ -2,6 +2,15 @@
 
 class HomeController < ApplicationController
   def index
-    @posts = Post.all.order("id DESC").page params[:page]
+    @labels = Label.all
+    posts = label_params[:label_id].present? ? Post.joins(:labels).where(labels: { id: label_params[:label_id] }) : Post.all
+
+    @posts = posts.order("id DESC").page params[:page]
+  end
+
+  private
+
+  def label_params
+    params.permit(:label_id)
   end
 end
