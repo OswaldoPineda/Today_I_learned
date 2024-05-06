@@ -5,3 +5,6 @@ application.register('materialize', MaterializeController);
 
 import LabelController from 'controllers/label_controller';
 application.register('label', LabelController);
+
+import ActiveLabelController from 'controllers/active_label_controller';
+application.register('active-label', ActiveLabelController);

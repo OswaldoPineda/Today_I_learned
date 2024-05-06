@@ -67,6 +67,15 @@ a.badge.badge-main {
   padding: 5px;
 }
 
+a.badge.badge-secondary {
+  background: $white;
+  border-radius: 8px;
+  border: 1px solid $secondary-color;
+  color: $secondary-color;
+  padding: 5px;
+  text-wrap: nowrap;
+}
+
 body {
   display: flex;
   min-height: 100vh;
