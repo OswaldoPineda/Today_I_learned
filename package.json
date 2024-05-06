@@ -9,7 +9,7 @@
     "linters:base": "$CMD rubocop haml-lint scss-lint eslint"
   },
   "engines": {
-    "node": "16.0.0"
+    "node": "20.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.22.15",
@@ -28,5 +28,5 @@
     "trix": "^2.0.7"
   },
   "pre-commit": "linters",
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.22"
 }
