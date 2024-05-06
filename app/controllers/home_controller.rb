@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    @posts = Post.all.order("id DESC").page params[:page]
+    @posts = Post.ordered.all.page params[:page]
   end
 end
