@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   def add_labels(name)
-    return unless name
+    name ||= 'Unlabeled'
 
     label = Label.find_by_variants(name)
     labels << (label || Label.create(name: name.titleize))
